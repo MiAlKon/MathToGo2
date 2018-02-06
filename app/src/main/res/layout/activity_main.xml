@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mike.mathtogo2.MainActivity"
+    android:background="#ffffff">
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:id="@+id/buttonMD"
+                android:text="T1-Mult/DIV"
+                android:onClick="buttonMD"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:id="@+id/buttonBC"
+                android:text="T1-BruchToDEC"
+                android:onClick="buttonBC"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:id="@+id/buttonZ"
+                android:text="B1-Zerlegung"
+                android:onClick="buttonZer"/>
+
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:id="@+id/buttonTeil"
+                android:text="T2-Teilbarkeit"
+                android:onClick="buttonTeil"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:id="@+id/buttonB"
+                android:text="T3-Bruchrechnen"
+                android:onClick="buttonBruch"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:id="@+id/buttonP"
+                android:text="T4-Prozentrechnen"
+                android:onClick="buttonProzent"/>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
