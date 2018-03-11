@@ -73,8 +73,31 @@ public class BruchDez extends AppCompatActivity {
     public void ResultBruchDez(View v){
         double InputDez = Double.parseDouble(Dez.getText().toString().replace(',','.'));
         InputDez = (double)((int)(InputDez*100))/100;
-        double InputBO = Double.parseDouble(Boben.getText().toString());
-        double InputBU = Double.parseDouble(Bunten.getText().toString());
+        double InputBO;
+        double InputBU;
+
+
+
+
+
+        try {
+        InputBO = Double.parseDouble(Boben.getText().toString());
+        InputBU = Double.parseDouble(Bunten.getText().toString());
+
+
+        } catch (NumberFormatException e) {
+            System.out.print(e);
+            InputBO = -1.0;
+            InputBU = -1.0;
+        }
+
+
+
+
+
+
+
+
         double InputBruch = (double)((int)(InputBO/InputBU*100))/100;
         rounds++;
 

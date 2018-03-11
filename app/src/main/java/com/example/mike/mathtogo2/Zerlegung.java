@@ -53,18 +53,39 @@ public class Zerlegung extends AppCompatActivity {
         double result;
 
         rounds++;
-        zehn3 = Integer.parseInt(zehn3Text.getText().toString()) * 1000;
-        zehn2 = Integer.parseInt(zehn2Text.getText().toString()) * 100;
-        zehn1 = Integer.parseInt(zehn1Text.getText().toString()) * 10;
-        zehn0 = Integer.parseInt(zehn0Text.getText().toString()) * 1;
-        zehnmin1 = Double.parseDouble(zehnM1Text.getText().toString()) * 0.1;
-        zehnmin2 = Double.parseDouble(zehnM2Text.getText().toString()) * 0.01;
-
-        result = zehn3+zehn2+zehn1+zehn0+zehnmin1+zehnmin2;
 
 
 
-        if(Dez == result){
+
+
+
+        try {
+            zehn3 = Integer.parseInt(zehn3Text.getText().toString()) * 1000;
+            zehn2 = Integer.parseInt(zehn2Text.getText().toString()) * 100;
+            zehn1 = Integer.parseInt(zehn1Text.getText().toString()) * 10;
+            zehn0 = Integer.parseInt(zehn0Text.getText().toString()) * 1;
+            zehnmin1 = Double.parseDouble(zehnM1Text.getText().toString()) * 0.1;
+            zehnmin2 = Double.parseDouble(zehnM2Text.getText().toString()) * 0.01;
+
+            result = zehn3+zehn2+zehn1+zehn0+zehnmin1+zehnmin2;
+        } catch (NumberFormatException e) {
+            System.out.print(e);
+            result = -1.0;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if(Dez == result){
             wins++;
             Submit.setBackgroundColor(0xFF00B212);
 

@@ -87,11 +87,18 @@ public class MultDiv extends AppCompatActivity {
     public void ResultMultDiv(View v)
     {
 
-        String Input= Result.getText().toString();
-        if(Input == null){
-            Input= "0";
+        String Input;
+
+
+        try {
+        Input= Result.getText().toString();
+            Input = Input.replace(',','.');
+
+        } catch (NumberFormatException e) {
+            System.out.print(e);
+            Input = "-1.0";
+
         }
-        Input = Input.replace(',','.');
 
 
 

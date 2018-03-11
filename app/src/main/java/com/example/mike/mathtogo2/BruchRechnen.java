@@ -90,8 +90,31 @@ public class BruchRechnen extends AppCompatActivity {
     }
 
     public void SubmitBruch(View v){
-        InputDOWN = Integer.parseInt(InputD.getText().toString());
-        inputUP = Integer.parseInt(InputU.getText().toString());
+
+
+
+
+        try {
+
+
+            InputDOWN = Integer.parseInt(InputD.getText().toString());
+        } catch (NumberFormatException e) {
+            System.out.print(e);
+            InputDOWN = -1.0;
+        }
+
+        try {
+
+
+            inputUP = Integer.parseInt(InputU.getText().toString());
+        } catch (NumberFormatException e) {
+            System.out.print(e);
+            inputUP  = -1.0;
+        }
+
+
+
+
         double inputresult = ((double)(((int)((inputUP/InputDOWN)*100)))/100);
         rounds++;
         InputU.setText("");

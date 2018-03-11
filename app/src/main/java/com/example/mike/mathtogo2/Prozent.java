@@ -8,12 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 public class Prozent extends AppCompatActivity {
 
     EditText Prozent,In,Out;
     Button Submit;
     TextView HitMiss;
-    double prozent , input , output,wins,rounds,hm;
+    Double prozent , input , output,wins,rounds,hm;
     int rng;
 
 
@@ -28,10 +30,14 @@ public class Prozent extends AppCompatActivity {
         Out = (EditText) findViewById(R.id.editOut);
         HitMiss = (TextView) findViewById(R.id.textHitMissProzent) ;
         Submit = (Button) findViewById(R.id.button3);
+        rounds = 0.0;
+        wins = 0.0;
     CreateTaskProzent();
     }
 
     public void CreateTaskProzent(){
+
+
 
         prozent = (double)((int)(Math.random()*(100-0)+0));
         while (!(prozent%5 == 0)){
@@ -57,16 +63,49 @@ public class Prozent extends AppCompatActivity {
     }
 
 
-    public void SubmitProzent(View v){
+    public void SubmitProzent(View v) {
 
-        input = Double.parseDouble(In.getText().toString());
-        output = Double.parseDouble(Out.getText().toString());
-        prozent = Double.parseDouble(Prozent.getText().toString());
+
+        try {
+
+
+            input = Double.parseDouble(In.getText().toString());
+        } catch (NumberFormatException e) {
+            System.out.print(e);
+            input = -1.0;
+        }
+        try {
+
+
+            output = Double.parseDouble(Out.getText().toString());
+        } catch (NumberFormatException e) {
+            System.out.print(e);
+            output = -1.0;
+        }
+
+
+        try {
+
+
+            prozent = Double.parseDouble(Prozent.getText().toString());
+        }catch (NumberFormatException e){
+            System.out.print(e);
+            prozent = -1.0;
+        }
+
+
+
         prozent = prozent/100;
         Prozent.setText("");
         In.setText("");
         Out.setText("");
         rounds++;
+
+
+
+
+
+
 
 
 
