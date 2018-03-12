@@ -91,7 +91,7 @@ public class BruchRechnen extends AppCompatActivity {
 
     public void SubmitBruch(View v){
 
-
+        double inputresult;
 
 
         try {
@@ -113,9 +113,17 @@ public class BruchRechnen extends AppCompatActivity {
         }
 
 
+try {
+
+    inputresult = ((double) (((int) ((inputUP / InputDOWN) * 100))) / 100);
+
+}catch (NumberFormatException e){
+            inputresult = -1.0;
+}
 
 
-        double inputresult = ((double)(((int)((inputUP/InputDOWN)*100)))/100);
+
+
         rounds++;
         InputU.setText("");
         InputD.setText("");
